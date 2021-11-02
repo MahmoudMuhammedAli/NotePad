@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotePad">
         <activity
+            android:name=".addNote"
+            android:exported="false" />
+        <activity
             android:name=".HomepPage"
             android:exported="false" />
         <activity

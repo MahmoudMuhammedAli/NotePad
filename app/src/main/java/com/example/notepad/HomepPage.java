@@ -3,6 +3,8 @@ package com.example.notepad;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class HomepPage extends AppCompatActivity {
 
@@ -10,40 +12,13 @@ public class HomepPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homep_page);
-        System.out.println("Hello there! , onCreate");
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String username = extras.getString("username");
+            TextView title = findViewById(R.id.welcome);
+            title.setText("Welcome, "+ username);
+        }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        System.out.println("Hello there! , onStart");
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        System.out.println("Hello there! , onResume");
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        System.out.println("Hello there! , onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        System.out.println("Hello there! , onStop");
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        System.out.println("misery and destruction");
-
-
-    }
 }

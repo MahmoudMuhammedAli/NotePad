@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /*start*/
-        final String EMAIL = "mahmoud@gmail.com";
+        final String EMAIL = "mahmoud";
         final String PASS = "1234";
         EditText email = (EditText) findViewById(R.id.email);
         EditText pass = (EditText) findViewById(R.id.pass);
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 String inPass  = pass.getText().toString();
                 Intent intent;
                intent = new Intent(getBaseContext(),HomepPage.class);
+               intent.putExtra("username" , inEmail);
                 if ( inEmail.equals(EMAIL)  && inPass.equals(PASS) ) {
 
                     startActivity(intent);
