@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
                intent = new Intent(getBaseContext(),HomepPage.class);
                intent.putExtra("username" , inEmail);
                 if ( inEmail.equals(EMAIL)  && inPass.equals(PASS) ) {
-
                     startActivity(intent);
                 }
                 else{
