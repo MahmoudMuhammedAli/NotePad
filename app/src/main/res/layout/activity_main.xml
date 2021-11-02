@@ -50,15 +50,13 @@
 
     <Button
         android:id="@+id/login"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:background="@color/teal_200"
-        android:backgroundTint="@color/teal_200"
         android:text="Log In"
-        android:textColor="#5E35B1"
+        android:textColor="#FFFFFF"
         android:visibility="visible"
+        app:iconTint="#854646"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

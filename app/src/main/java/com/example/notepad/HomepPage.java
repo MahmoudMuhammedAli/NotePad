@@ -15,13 +15,15 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomepPage extends AppCompatActivity {
     static int counter = 0 ;
-    TextView count = findViewById(R.id.title);
+    static  TextView count ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_homep_page);
         Bundle extras = getIntent().getExtras();
+        count = findViewById(R.id.notes);
         if (extras != null) {
             String username = extras.getString("username");
             TextView title = findViewById(R.id.welcome);
@@ -34,16 +36,20 @@ public class HomepPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent;
                 intent = new Intent(getBaseContext(),addNote.class);
-                startActivityForResult(intent , 12);
-
+                startActivityForResult(intent, 12);
             }
         });
     }
-    public void onActivityResult(int reqCode , int resCode , Intent data){
+
+
+    public void onActivityResult(int reqCode , int resCode , Intent  data){
         super.onActivityResult(reqCode , resCode , data);
         if(reqCode == 12 && resCode == RESULT_OK){
           Toast.makeText(HomepPage.this ,"New note added" , Toast.LENGTH_SHORT ).show();
           count.setText("Notes("+ ++counter + ")");
+        }else if(resCode == RESULT_CANCELED){
+            Toast.makeText(HomepPage.this ,"Nothing added!" , Toast.LENGTH_SHORT ).show();
+
         }
     }
 
