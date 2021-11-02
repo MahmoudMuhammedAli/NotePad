@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 String inPass  = pass.getText().toString();
                 Intent intent;
                intent = new Intent(getBaseContext(),HomepPage.class);
-                //    Intent intent = new Intent(this,HomepPage.class);
                 if ( inEmail.equals(EMAIL)  && inPass.equals(PASS) ) {
 
                     startActivity(intent);
