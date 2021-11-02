@@ -17,4 +17,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/multiAutoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="104dp"
+        android:hint="yout note here..."
+        android:lineSpacingMultiplier="1.5"
+        android:lines="10"
+        android:maxLines="100"
+        android:minLines="10"
+        app:layout_constraintTop_toTopOf="@+id/title_input"
+        tools:layout_editor_absoluteX="55dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

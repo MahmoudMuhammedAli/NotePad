@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     System.out.println("Wrong Email or Password");
+                    Toast.makeText(MainActivity.this , "Wrong Email or Password", Toast.LENGTH_SHORT).show();
                 }
 
             }
