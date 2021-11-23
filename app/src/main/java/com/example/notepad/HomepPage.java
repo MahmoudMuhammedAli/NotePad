@@ -46,7 +46,11 @@ public class HomepPage extends AppCompatActivity {
         super.onActivityResult(reqCode , resCode , data);
         if(reqCode == 12 && resCode == RESULT_OK){
           Toast.makeText(HomepPage.this ,"New note added" , Toast.LENGTH_SHORT ).show();
-          count.setText("Notes("+ ++counter + ")");
+            Note newNote = (Note) getIntent().getSerializableExtra("newNote");
+
+            System.out.println("--------- NEW NOTE ADDED");
+            System.out.println(newNote);
+            count.setText("Notes("+ ++counter + ")");
         }else if(resCode == RESULT_CANCELED){
             Toast.makeText(HomepPage.this ,"Nothing added!" , Toast.LENGTH_SHORT ).show();
 

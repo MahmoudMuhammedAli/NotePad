@@ -73,12 +73,13 @@ public class addNote extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(URLUtil.isValidUrl(url.getText().toString())){
+                    note.setUrl(url.getText().toString());
                     Toast.makeText(addNote.this, "downloading...", Toast.LENGTH_SHORT).show();
                     Intent intent =new Intent(addNote.this,DownloadAPic.class);
                     intent.putExtra("m",url.getText().toString());
                     startService(intent);
                     imageView.setImageBitmap(DownloadAPic.bitmap );
-                    System.out.println(DownloadAPic.bitmap);
+                    note.setImagebitmap(DownloadAPic.bitmap);
                     stopService(intent);
 
                 }
@@ -96,8 +97,9 @@ public class addNote extends AppCompatActivity {
                 if(title.getText().toString().equals("")){
                     Toast.makeText(addNote.this, "enter the note title!", Toast.LENGTH_SHORT).show();
                 }else{
+                    note.setTitle(title.getText().toString());
                     Intent replyIntent = new Intent();
-                    replyIntent.putExtra("add", true);
+                    replyIntent.putExtra("newNote", note);
                     setResult(RESULT_OK, replyIntent);
                     finish();
                 }

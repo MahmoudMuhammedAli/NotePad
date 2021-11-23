@@ -3,7 +3,9 @@ package com.example.notepad;
 import android.graphics.Bitmap;
 import android.widget.TextView;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
     private String title;
     private String body;
     private String url;
