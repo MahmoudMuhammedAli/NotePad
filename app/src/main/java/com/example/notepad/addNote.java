@@ -32,10 +32,27 @@ public class addNote extends AppCompatActivity {
         Button save = findViewById(R.id.save);
         //Get The image
         EditText url = findViewById(R.id.url_input);
+        EditText desc = findViewById(R.id.desc);
+
         Button download = findViewById(R.id.download);
         String regex = "^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
         ImageView imageView = findViewById(R.id.image) ;
         Switch canDown = findViewById(R.id.imageSwitch);
+
+        Note note = new Note(
+                title.getText().toString(),
+                desc.getText().toString() ,
+                url.getText().toString(),
+                DownloadAPic.bitmap
+        );
+
+
+
+
+
+
+
+        //Listeners
         canDown.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
