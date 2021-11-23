@@ -20,7 +20,7 @@ public class HomepPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_homep_page);
         Bundle extras = getIntent().getExtras();
         count = findViewById(R.id.notes);

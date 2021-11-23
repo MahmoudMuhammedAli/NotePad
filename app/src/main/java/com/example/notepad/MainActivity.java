@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         /*start*/
         final String EMAIL = "mahmoud";
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 String inEmail = email.getText().toString();
                 String inPass  = pass.getText().toString();
                 Intent intent;
-               intent = new Intent(getBaseContext(),HomepPage.class);
+               intent = new Intent(getBaseContext(), HomepPage.class);
                intent.putExtra("username" , inEmail);
                 if ( inEmail.equals(EMAIL)  && inPass.equals(PASS) ) {
                     startActivity(intent);
